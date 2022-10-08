@@ -45,6 +45,7 @@ pub struct Dataset {
 }
 
 #[derive(Serialize, PartialEq, Clone, Debug)]
+#[serde(untagged)]
 pub enum DatasetData {
     Scalars(Vec<f32>),
     Points(Vec<Point>),
