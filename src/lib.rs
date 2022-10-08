@@ -3,7 +3,7 @@ use std::fmt::Write;
 use serde::Serialize;
 use yew::prelude::*;
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Config {
     #[serde(rename = "type")]
     pub type_: String,
@@ -11,30 +11,30 @@ pub struct Config {
     pub options: Options,
 }
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Options {
     pub scales: Option<Scales>,
 }
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Scales {
     pub x: Axis,
 }
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Axis {
     #[serde(rename = "type")]
     pub type_: String,
     pub position: String,
 }
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Data {
     pub labels: Option<Vec<String>>,
     pub datasets: Vec<Dataset>,
 }
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Dataset {
     pub label: String,
     #[serde(rename = "backgroundColor")]
@@ -44,13 +44,13 @@ pub struct Dataset {
     pub data: DatasetData,
 }
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub enum DatasetData {
     Scalars(Vec<f32>),
     Points(Vec<Point>),
 }
 
-#[derive(Serialize, PartialEq, Clone)]
+#[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Point {
     pub x: f32,
     pub y: f32,
