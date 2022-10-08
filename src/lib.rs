@@ -25,7 +25,13 @@ pub struct Scales {
 pub struct Axis {
     #[serde(rename = "type")]
     pub type_: String,
-    pub position: String,
+    pub position: Option<String>,
+    pub time: Option<Time>,
+}
+
+#[derive(Serialize, PartialEq, Clone, Debug)]
+pub struct Time {
+    pub unit: Option<String>,
 }
 
 #[derive(Serialize, PartialEq, Clone, Debug)]
