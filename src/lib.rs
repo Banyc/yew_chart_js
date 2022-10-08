@@ -85,7 +85,7 @@ pub fn chart_component(props: &ChartProps) -> Html {
     write!(
         script,
         "
-            const {} = new Chart(
+            var {} = new Chart(
                 document.getElementById('{}'),
                 {}
             );
