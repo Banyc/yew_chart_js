@@ -47,14 +47,22 @@ pub struct Dataset {
 #[derive(Serialize, PartialEq, Clone, Debug)]
 #[serde(untagged)]
 pub enum DatasetData {
-    Scalars(Vec<f32>),
+    Scalars(Vec<Number>),
     Points(Vec<Point>),
 }
 
 #[derive(Serialize, PartialEq, Clone, Debug)]
 pub struct Point {
-    pub x: f32,
-    pub y: f32,
+    pub x: Number,
+    pub y: Number,
+}
+
+#[derive(Serialize, PartialEq, Clone, Debug)]
+#[serde(untagged)]
+pub enum Number {
+    Float(f64),
+    Int(i64),
+    UInt(u64),
 }
 
 #[derive(Properties, PartialEq)]
