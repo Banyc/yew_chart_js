@@ -41,7 +41,19 @@ pub struct Dataset {
     pub background_color: String,
     #[serde(rename = "borderColor")]
     pub border_color: String,
-    pub data: Vec<f32>,
+    pub data: DatasetData,
+}
+
+#[derive(Serialize, PartialEq, Clone)]
+pub enum DatasetData {
+    Scalars(Vec<f32>),
+    Points(Vec<Point>),
+}
+
+#[derive(Serialize, PartialEq, Clone)]
+pub struct Point {
+    pub x: f32,
+    pub y: f32,
 }
 
 #[derive(Properties, PartialEq)]
