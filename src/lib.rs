@@ -12,11 +12,25 @@ pub struct Config {
 }
 
 #[derive(Serialize, PartialEq, Clone)]
-pub struct Options {}
+pub struct Options {
+    pub scales: Option<Scales>,
+}
+
+#[derive(Serialize, PartialEq, Clone)]
+pub struct Scales {
+    pub x: Axis,
+}
+
+#[derive(Serialize, PartialEq, Clone)]
+pub struct Axis {
+    #[serde(rename = "type")]
+    pub type_: String,
+    pub position: String,
+}
 
 #[derive(Serialize, PartialEq, Clone)]
 pub struct Data {
-    pub labels: Vec<String>,
+    pub labels: Option<Vec<String>>,
     pub datasets: Vec<Dataset>,
 }
 

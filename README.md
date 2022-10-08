@@ -46,7 +46,7 @@ Chart.js bindings for Yew.
            .map(|v| v.to_string())
            .collect::<Vec<String>>();
        let data = yew_chart_js::Data {
-           labels,
+           labels: Some(labels),
            datasets: vec![yew_chart_js::Dataset {
                label: "My First dataset".to_string(),
                background_color: "rgb(255, 99, 132)".to_string(),
