@@ -1,0 +1,11 @@
+[package]
+name = "example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+yew = "0.19.3"
+# replace this with `yew_chart_js = { git = "https://github.com/Banyc/yew_chart_js" }`
+yew_chart_js = { path = ".." }
