@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 yew = { version = "0.20.0", features = ["csr"] }
 # replace this with `yew_chart_js = { git = "https://github.com/Banyc/yew_chart_js" }`
-yew_chart_js = { path = ".." }
+yew_chart_js = { path = "../.." }
