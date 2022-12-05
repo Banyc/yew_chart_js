@@ -24,11 +24,11 @@ pub fn app() -> Html {
             ]),
         }],
     };
-    let config = yew_chart_js::Config {
+    let config = yew_chart_js::Config::Easy(yew_chart_js::ConfigEasy {
         type_: "line".to_string(),
         data,
         options: yew_chart_js::Options { scales: None },
-    };
+    });
 
     html! {
         <div>
