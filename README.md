@@ -62,15 +62,19 @@ Chart.js bindings for Yew.
                ]),
            }],
        };
-       let config = yew_chart_js::Config::Easy(yew_chart_js::ConfigEasy {
+       let config = yew_chart_js::Config {
            type_: "line".to_string(),
            data,
            options: yew_chart_js::Options { scales: None },
-       });
+       };
    
        html! {
            <div>
-               <yew_chart_js::Chart id="myChart" config={ config } />
+               <h1>{ "Chart" }</h1>
+               <yew_chart_js::Chart
+                   id="myChart"
+                   config={ config.to_js_value() }
+               />
            </div>
        }
    }

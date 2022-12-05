@@ -1,11 +1,17 @@
 use serde::Serialize;
+use wasm_bindgen::JsValue;
 
 #[derive(Serialize, PartialEq, Clone, Debug)]
-pub struct ConfigEasy {
+pub struct Config {
     #[serde(rename = "type")]
     pub type_: String,
     pub data: Data,
     pub options: Options,
+}
+impl Config {
+    pub fn to_js_value(&self) -> JsValue {
+        serde_wasm_bindgen::to_value(self).unwrap()
+    }
 }
 
 #[derive(Serialize, PartialEq, Clone, Debug)]
