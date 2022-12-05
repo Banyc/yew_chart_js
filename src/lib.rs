@@ -1,5 +1,3 @@
-use std::fmt::Write;
-
 use serde::Serialize;
 use yew::prelude::*;
 
@@ -81,9 +79,7 @@ pub struct ChartProps {
 pub fn chart_component(props: &ChartProps) -> Html {
     let config_string = serde_json::to_string(&props.config).unwrap();
 
-    let mut script = String::new();
-    write!(
-        script,
+    let script = format!(
         "
             var {} = new Chart(
                 document.getElementById('{}'),
@@ -91,8 +87,7 @@ pub fn chart_component(props: &ChartProps) -> Html {
             );
         ",
         props.id, props.id, config_string
-    )
-    .unwrap();
+    );
 
     html!(
         <>
