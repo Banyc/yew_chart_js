@@ -1,4 +1,4 @@
-use yew::{function_component, html};
+use yew::prelude::*;
 
 #[function_component(App)]
 pub fn app() -> Html {
@@ -38,5 +38,5 @@ pub fn app() -> Html {
 }
 
 fn main() {
-    yew::start_app::<App>();
+    yew::Renderer::<App>::new().render();
 }
